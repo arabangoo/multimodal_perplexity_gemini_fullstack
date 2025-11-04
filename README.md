@@ -106,7 +106,7 @@ PORT=8000
 LANGSMITH_STUDIO_AUTO_OPEN=false
 ```
 
-### backend/src/utils/images.py 🆕
+### backend/src/utils/images.py 
 이미지 처리 유틸리티 
 
 ```python
