@@ -568,7 +568,7 @@ pip install Pillow python-multipart
 
 ---
 
-## 🔐 보안 및 제한사항
+## 🔐 제한사항
 
 ### 파일 업로드 제한
 - 최대 파일 크기: 10MB
@@ -579,20 +579,6 @@ pip install Pillow python-multipart
 - Gemini API: 이미지 포함 시 토큰 사용량 증가
 - Perplexity API: 검색당 1회 요청
 - 최대 3회 반복 검색 가능
-
----
-
-## 🚀 향후 개발 계획
-
-### 예정된 기능
-- [ ] PDF 문서 지원
-- [ ] 여러 이미지 동시 업로드
-- [ ] 음성 입력 지원 (Whisper)
-- [ ] 대화 기록 영구 저장 (PostgreSQL)
-- [ ] 이미지 편집 (크롭, 회전)
-- [ ] 다크/라이트 모드
-- [ ] 검색 히스토리
-- [ ] 출처 미리보기
 
 ---
 
