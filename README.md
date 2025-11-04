@@ -128,7 +128,7 @@ def validate_image_file(file: UploadFile) -> bool:
 class ResearchState(TypedDict):
     messages: list[BaseMessage]    # 대화 기록
     query: str                     # 사용자 질문
-    image: str                     # 🆕 이미지 Base64 (멀티모달)
+    image: str                     # 이미지 Base64 (멀티모달)
     search_results: list[dict]     # Perplexity 검색 결과
     citations: list[str]           # 출처 URL
     related_questions: list[str]   # 관련 질문
@@ -151,13 +151,13 @@ extract_query → search_perplexity → analyze_with_gemini
 **주요 노드:**
 
 1. **extract_query**: 질문 추출 및 State 초기화
-2. **search_perplexity** (🆕 멀티모달):
+2. **search_perplexity** (멀티모달):
    - 이미지가 있으면 Gemini로 이미지 설명 생성
    - 이미지 설명을 검색 쿼리에 포함
    - Perplexity로 웹 검색 실행
 3. **analyze_with_gemini**: "정보 충분한가?" 판단
 4. **should_continue**: 조건 분기 (재검색 vs 답변 생성)
-5. **generate_final_answer** (🆕 멀티모달):
+5. **generate_final_answer** (멀티모달):
    - 이미지 포함 프롬프트 구성
    - 검색 결과 종합하여 상세 답변 생성
    - **응답 길이 2배 증가** (max_tokens: 8192)
@@ -167,7 +167,7 @@ extract_query → search_perplexity → analyze_with_gemini
 gemini = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash-exp",
     temperature=0.3,
-    max_output_tokens=8192  # 🆕 기존 4096에서 2배 증가
+    max_output_tokens=8192  
 )
 ```
 
@@ -179,7 +179,7 @@ FastAPI 서버 및 API 엔드포인트
 async def research(
     query: str = Form(...),              # 텍스트 쿼리
     session_id: Optional[str] = Form(None),
-    file: Optional[UploadFile] = File(None)  # 🆕 이미지 파일
+    file: Optional[UploadFile] = File(None)  
 ):
     # 1. 이미지 처리 (Base64 인코딩)
     # 2. 세션 ID 확인/생성
@@ -253,7 +253,7 @@ const formData = new FormData()
 formData.append('query', userMessage.content)
 formData.append('session_id', sessionId)
 if (currentImage) {
-    formData.append('file', currentImage)  // 🆕
+    formData.append('file', currentImage) 
 }
 ```
 
