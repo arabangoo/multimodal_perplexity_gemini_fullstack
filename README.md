@@ -218,8 +218,8 @@ React 컴포넌트 (멀티모달 UI 지원)
 ```typescript
 const [messages, setMessages] = useState<Message[]>([])
 const [sessionId, setSessionId] = useState<string | null>(null)
-const [selectedImage, setSelectedImage] = useState<File | null>(null)      // 🆕
-const [imagePreview, setImagePreview] = useState<string | null>(null)      // 🆕
+const [selectedImage, setSelectedImage] = useState<File | null>(null)      
+const [imagePreview, setImagePreview] = useState<string | null>(null)      
 ```
 
 **UI 구성:**
