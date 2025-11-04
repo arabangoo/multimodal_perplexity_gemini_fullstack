@@ -34,6 +34,8 @@ Gemini API 키와 Perplexity API 키가 필요하니 미리 발급받아 놓으�
 - 📱 제품 이미지 + "이 제품 리뷰 찾아줘" → 최신 리뷰 검색
 - 🐕 동물 사진만 업로드 → 자동으로 동물 종류 및 정보 분석
 
+<img width="1413" height="924" alt="image_1" src="https://github.com/user-attachments/assets/d34cf02e-07a1-4f39-983e-c102c43a078b" />
+
 <br/>
 
 ---
