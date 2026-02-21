@@ -279,7 +279,7 @@ export default function App() {
               <div className="bg-gray-800 rounded-lg p-4 max-w-[80%]">
                 <div className="flex items-center gap-2">
                   <div className="animate-spin rounded-full h-4 w-4 border-2 border-blue-500 border-t-transparent"></div>
-                  <span className="text-gray-400">이미지 분석 및 검색 중...</span>
+                  <span className="text-gray-400">AI가 답변을 준비하고 있어요...</span>
                 </div>
               </div>
             </div>

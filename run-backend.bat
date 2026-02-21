@@ -4,7 +4,7 @@ echo Starting Backend Server
 echo ========================================
 echo.
 
-cd /d C:\git_clone\gemini-react-langgraph-fullstack\backend
+cd /d "%~dp0backend"
 
 echo Memory: MemorySaver (volatile)
 echo API Keys: Gemini + Perplexity

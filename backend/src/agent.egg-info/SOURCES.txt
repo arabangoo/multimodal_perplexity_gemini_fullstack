@@ -15,3 +15,5 @@ src/agent.egg-info/requires.txt
 src/agent.egg-info/top_level.txt
 src/tools/__init__.py
 src/tools/perplexity.py
+src/utils/__init__.py
+src/utils/images.py

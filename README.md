@@ -60,8 +60,9 @@ npm --version     # npm 9 이상 권장
 ### (2) 파일 구성
 
 ```txt
-├── 실행 관련 파일들 
-│   ├── install.bat          ← 의존성 설치 자동화
+├── 실행 관련 파일들
+│   ├── install-admin.bat    ← 의존성 설치 (관리자 권한 자동 요청) ← 권장
+│   ├── install.bat          ← 의존성 설치 (일반 권한)
 │   ├── run-backend.bat      ← 백엔드만 실행
 │   ├── run-frontend.bat     ← 프론트엔드만 실행
 │   ├── run-all.bat          ← 백엔드+프론트엔드 동시 실행
@@ -265,7 +266,19 @@ if (currentImage) {
 
 ### (5) 실행 스크립트들
 
-#### install.bat - 의존성 설치 (최초 1회)
+#### install-admin.bat - 의존성 설치 (관리자 권한, 권장)
+```bash
+# UAC 팝업으로 관리자 권한 자동 요청 후 설치
+cd backend
+pip install -e .
+
+cd frontend
+npm install
+```
+
+> **권장**: pip 설치 시 권한 오류가 발생할 수 있으므로 `install-admin.bat`을 사용하세요.
+
+#### install.bat - 의존성 설치 (일반 권한)
 ```bash
 cd backend
 pip install -e .
@@ -327,7 +340,9 @@ docker-compose up -d
 
 **1단계: 의존성 설치 (최초 1회)**
 ```bash
-install.bat
+install-admin.bat   ← 권장 (관리자 권한 자동 요청)
+# 또는
+install.bat         ← 일반 권한으로 실행 시
 ```
 
 **2단계: 환경 변수 설정**
@@ -447,13 +462,6 @@ HOST=0.0.0.0
 PORT=8000
 LANGSMITH_STUDIO_AUTO_OPEN=false
 ```
-
-#### `run-all.bat` 수정
-```batch
-cd /d C:\실제_경로  # ← 프로젝트의 실제 경로로 변경
-```
-
-**⚠️ 중요**: "실제 경로" 부분을 프로젝트가 있는 실제 경로로 바꿔야 합니다.
 
 ---
 
