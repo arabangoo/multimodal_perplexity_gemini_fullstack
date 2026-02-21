@@ -449,17 +449,19 @@ graph.py: generate_final_answer
 
 #### 루트 디렉토리 `.env` (Docker 배포용)
 ```env
-GEMINI_API_KEY=실제_제미나이_API_키
-PERPLEXITY_API_KEY=실제_퍼플렉시티_API_키
-LANGSMITH_API_KEY=실제_랭스미스_API_키  # 선택사항
+GEMINI_API_KEY=your_gemini_api_key_here
+PERPLEXITY_API_KEY=your_perplexity_api_key_here
+LANGSMITH_API_KEY=your_langsmith_api_key_here  # 선택사항
 ```
 
 #### `backend/.env` (로컬 개발용)
 ```env
-GEMINI_API_KEY=실제_제미나이_API_키
-PERPLEXITY_API_KEY=실제_퍼플렉시티_API_키
+GEMINI_API_KEY=your_gemini_api_key_here
+PERPLEXITY_API_KEY=your_perplexity_api_key_here
 HOST=0.0.0.0
 PORT=8000
+
+# Disable LangSmith Studio auto-open
 LANGSMITH_STUDIO_AUTO_OPEN=false
 ```
 
@@ -474,8 +476,8 @@ LANGSMITH_STUDIO_AUTO_OPEN=false
 - **LangChain** - LLM 통합
 - **Gemini 2.0 Flash** - 멀티모달 LLM
 - **Perplexity API** - 실시간 웹 검색
-- **Pillow** - 이미지 처리 🆕
-- **python-multipart** - FormData 처리 🆕
+- **Pillow** - 이미지 처리 
+- **python-multipart** - FormData 처리 
 
 ### 프론트엔드
 - **React 19**
@@ -489,30 +491,6 @@ LANGSMITH_STUDIO_AUTO_OPEN=false
 - **MemorySaver** - 휘발성 메모리 (세션별)
 - **PostgreSQL** - 영구 저장소 (Docker 배포 시)
 - **Redis** - 캐싱 (Docker 배포 시)
-
----
-
-## 📝 주요 개선 사항
-
-### 🆕 v2.0 (멀티모달 버전)
-
-
-1. ✅ **멀티모달 지원** - 텍스트 + 이미지 동시 입력
-2. ✅ **이미지 자동 분석** - Gemini가 이미지 설명 생성
-3. ✅ **향상된 검색** - 이미지 설명 포함 검색
-4. ✅ **응답 길이 2배** - max_tokens: 4096 → 8192
-5. ✅ **이미지 최적화** - 자동 리사이징 + WebP 변환
-6. ✅ **UI/UX 개선** - 이미지 업로드 버튼, 미리보기
-7. ✅ **파일 크기 제한** - 10MB 이하
-8. ✅ **다양한 형식 지원** - JPG, PNG, GIF, WebP, BMP
-
-### v1.0 (기본 버전)
-1. ✅ Perplexity 실시간 검색
-2. ✅ Gemini AI 분석
-3. ✅ 세션 기반 대화 기억
-4. ✅ 자동 반복 검색 (최대 3회)
-5. ✅ 출처 링크 제공
-6. ✅ 관련 질문 제안
 
 ---
 
